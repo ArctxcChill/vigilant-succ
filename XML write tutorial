@@ -1,0 +1,11 @@
+XDocument xDoc = new XDocument();
+            XElement xElem = new XElement("Competitor");
+            xDoc.Add(xElem);
+            foreach (KeyValuePair<string, string> k in person)
+            {
+                xElem.Add(new XAttribute("name", k.Key));
+                xElem.Add(new XElement("race", k.value));
+                            //XElement xElem = new XElement("race", k.Value);
+                xBiscuits.Add(xElem);
+            }
+            xDoc.Save("Source/Resources/XMLTest.xml");
